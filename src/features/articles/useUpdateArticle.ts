@@ -13,6 +13,9 @@ export function useUpdateArticle() {
       updateArticle(slug, articleData),
     onSuccess: (data) => {
       queryClient.setQueryData(["article", data.article.slug], data);
+      queryClient.invalidateQueries({
+        queryKey: ["tags"],
+      });
       navigate(`/article/${data.article.slug}`);
       toast.success("Article Updated");
     },

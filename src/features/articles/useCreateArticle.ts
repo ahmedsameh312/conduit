@@ -14,6 +14,9 @@ export function useCreateArticle() {
       queryClient.invalidateQueries({
         queryKey: ["articles"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["tags"],
+      });
       navigate(`/article/${data.article.slug}`);
       toast.success("Article created");
     },

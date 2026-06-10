@@ -14,6 +14,9 @@ export function useDeleteArticle() {
       queryClient.invalidateQueries({
         queryKey: ["article"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["tags"],
+      });
       toast.error("Article Deleted");
     },
   });
