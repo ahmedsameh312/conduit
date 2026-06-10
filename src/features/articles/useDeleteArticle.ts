@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteArticle } from "../../services/articleApi";
+import toast from "react-hot-toast";
 
 export function useDeleteArticle() {
   const queryClient = useQueryClient();
@@ -10,6 +11,10 @@ export function useDeleteArticle() {
       queryClient.invalidateQueries({
         queryKey: ["articles"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["article"],
+      });
+      toast.error("Article Deleted");
     },
   });
 }

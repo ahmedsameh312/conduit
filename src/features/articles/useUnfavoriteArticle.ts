@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { unfavoriteArticle } from "../../services/articleApi";
+import toast from "react-hot-toast";
 
 export function useUnfavoriteArticle() {
   const queryClient = useQueryClient();
@@ -18,6 +19,7 @@ export function useUnfavoriteArticle() {
       queryClient.invalidateQueries({
         queryKey: ["feedArticles"],
       });
+      toast.error("Removed from Favorites");
     },
   });
 }

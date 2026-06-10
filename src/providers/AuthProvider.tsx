@@ -1,5 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useState, type ReactNode } from "react";
+import toast from "react-hot-toast";
 
 type AuthContextType = {
   token: string | null;
@@ -33,6 +34,7 @@ export default function AuthProvider({ children }: Props) {
     queryClient.invalidateQueries({
       queryKey: ["articles"],
     });
+    toast.success("Logged out");
   }
 
   return (

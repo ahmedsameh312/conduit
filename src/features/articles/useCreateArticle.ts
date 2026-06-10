@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { createArticle } from "../../services/articleApi";
 import type { CreateArticleData } from "../../types/article";
+import toast from "react-hot-toast";
 
 export function useCreateArticle() {
   const navigate = useNavigate();
@@ -14,6 +15,10 @@ export function useCreateArticle() {
         queryKey: ["articles"],
       });
       navigate(`/article/${data.article.slug}`);
+      toast.success("Article created");
+    },
+    onError: () => {
+      toast.error("Failed to create article");
     },
   });
 }
