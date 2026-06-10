@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useArticle } from "../features/articles/useArticle";
+import { Helmet } from "react-helmet-async";
 import Spinner from "../ui/Spinner";
 import ErrorMessage from "../ui/ErrorMessage";
 import { useComments } from "../features/comments/useComments";
@@ -24,6 +25,9 @@ export default function Article() {
 
   return (
     <div>
+      <Helmet>
+        <title>{article?.title + " - Conduit"}</title>
+      </Helmet>
       <section className="bg-white py-12 text-black">
         <div className="mx-auto max-w-4xl px-4">
           <h1 className="mb-6 text-5xl font-bold">{article.title}</h1>

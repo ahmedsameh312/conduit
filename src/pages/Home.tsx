@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ArticleList from "../features/articles/ArticleList";
 import { useArticles } from "../features/articles/useArticles";
+import { Helmet } from "react-helmet-async";
 import TagList from "../features/tags/TagList";
 import ErrorMessage from "../ui/ErrorMessage";
 import Spinner from "../ui/Spinner";
@@ -25,6 +26,9 @@ export default function Home() {
 
   return (
     <div>
+      <Helmet>
+        <title>Home - Conduit</title>
+      </Helmet>
       <section className="bg-green-500 py-12 text-center text-white shadow-md">
         <h1 className="text-6xl font-bold">conduit</h1>
         <p className="mt-2 text-xl text-green-100">

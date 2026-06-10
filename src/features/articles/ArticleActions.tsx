@@ -11,7 +11,7 @@ export default function ArticleActions({ slug }: ArticleActionsProps) {
   return (
     <>
       <Link
-        to={`editor/${slug}`}
+        to={`/editor/${slug}`}
         className="rounded border border-yellow-500 text-yellow-500 mx-2 px-3 py-1 text-sm"
       >
         Edit Article
