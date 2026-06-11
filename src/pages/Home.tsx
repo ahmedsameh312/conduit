@@ -20,7 +20,12 @@ export default function Home() {
   const articles =
     activeFeed === "your" ? feedData?.articles : globalData?.articles;
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <Spinner />
+      </div>
+    );
 
   if (error) return <ErrorMessage message="Failed to load articles" />;
 

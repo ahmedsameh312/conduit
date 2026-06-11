@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# Conduit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured RealWorld Conduit clone built with React, TypeScript, React Query, React Router, Tailwind CSS, and Vercel.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View Live Application](https://conduit-ahmedsameh312.vercel.app/)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Authentication (Register/Login/Logout)
+- Protected Routes
+- Global Feed
+- Personal Feed
+- Article Pagination
+- Create Articles
+- Edit Articles
+- Delete Articles
+- Favorite / Unfavorite Articles
+- User Profiles
+- Follow / Unfollow Users
+- Article Comments
+- Settings Management
+- Tag Filtering
+- React Query Caching
+- Toast Notifications
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19
+- TypeScript
+- React Router
+- React Query
+- Tailwind CSS
+- Axios
+- React Hook Form
+- Zod
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Deployment
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Vercel
+
+## Screenshots
+
+### Home Page
+
+![Home](public/screenshots/Home.png)
+
+### Article Page
+
+![Article](public/screenshots/Article.png)
+![Article](public/screenshots/Article-1.png)
+
+### Profile Page
+
+![Profile](public/screenshots/Profile.png)
+![Profile](public/screenshots/Profile-1.png)
+
+### Editor Page
+
+![Editor](public/screenshots/Editor.png)
+![Editor](public/screenshots/Editor-1.png)
+
+### Settings Page
+
+![Settings](public/screenshots/Settings.png)
+
+## Installation
+
+```bash
+git clone https://github.com/ahmedsameh312/conduit
+
+cd conduit
+
+pnpm install
+
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm build
 ```
+
+## Author
+
+Ahmed Sameh
